@@ -905,3 +905,352 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.section-theme').forEach(section => observer.observe(section));
 });
+
+
+                              // 🎵 Music System Configuration
+const MUSIC_FILES = [
+    'assets/music/Kachha-Ghada.mp3',
+    'assets/music/music2.mp3',
+    'assets/music/music3.mp3'
+];
+
+// Music Player State
+let audioContext;
+let currentTrackIndex = 0;
+let isPlaying = false;
+let isMuted = false;
+let previousVolume = 70;
+let generatedTracks = [];
+let audioElement = null;
+let audioSource = null;
+let gainNode = null;
+
+// DOM Elements
+const musicFloatBtn = document.getElementById('musicFloatBtn');
+const musicWidget = document.getElementById('musicWidget');
+const closeMusicWidget = document.getElementById('closeMusicWidget');
+const trackName = document.getElementById('trackName');
+const currentTimeEl = document.getElementById('currentTime');
+const totalTimeEl = document.getElementById('totalTime');
+const remainingTimeEl = document.getElementById('remainingTime');
+const progressFill = document.getElementById('progressFill');
+const progressSlider = document.getElementById('progressSlider');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const volumeBtn = document.getElementById('volumeBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeValue = document.getElementById('volumeValue');
+
+// Icons
+const playIcon = playPauseBtn.querySelector('.play-icon');
+const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+const volumeHigh = volumeBtn.querySelector('.volume-high');
+const volumeLow = volumeBtn.querySelector('.volume-low');
+const volumeMute = volumeBtn.querySelector('.volume-mute');
+
+// Initialize
+document.addEventListener('DOMContentLoaded', initMusic);
+
+// Generate ambient music if files not found
+async function initMusic() {
+    try {
+        const response = await fetch(MUSIC_FILES[0], { method: 'HEAD' });
+        if (response.ok) {
+            audioElement = new Audio();
+            audioElement.crossOrigin = 'anonymous';
+            loadTrack(0);
+        } else {
+            generateAmbientMusic();
+        }
+    } catch (e) {
+        generateAmbientMusic();
+    }
+}
+
+// Generate ambient tracks
+function generateAmbientMusic() {
+    generatedTracks = [
+        { name: 'Ethereal Pad', freq: 220, duration: 12 },
+        { name: 'Ocean Waves', freq: 165, duration: 14 },
+        { name: 'Crystal Bells', freq: 330, duration: 10 }
+    ];
+    trackName.textContent = generatedTracks[0].name;
+    totalTimeEl.textContent = formatTime(generatedTracks[0].duration);
+}
+
+// Load track
+function loadTrack(index) {
+    if (!audioElement) return;
+    currentTrackIndex = index;
+    audioElement.src = MUSIC_FILES[index];
+    audioElement.load();
+    
+    // Extract name from filename
+    const filename = MUSIC_FILES[index].split('/').pop().replace('.mp3', '');
+    const name = filename.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    trackName.textContent = name;
+    
+    audioElement.addEventListener('loadedmetadata', () => {
+        totalTimeEl.textContent = formatTime(audioElement.duration);
+    }, { once: true });
+}
+
+// Format time
+function formatTime(seconds) {
+    if (!seconds || isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+// Toggle Play/Pause
+function togglePlay() {
+    if (generatedTracks.length > 0) {
+        playGeneratedTrack();
+        return;
+    }
+    
+    if (!audioElement) return;
+    
+    if (isPlaying) {
+        audioElement.pause();
+        musicFloatBtn.classList.remove('playing');
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+    } else {
+        audioElement.play().catch(() => {
+            initAudioContext();
+            audioElement.play();
+        });
+        musicFloatBtn.classList.add('playing');
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+    }
+    isPlaying = !isPlaying;
+}
+
+// Play generated track
+function playGeneratedTrack() {
+    if (!audioContext) {
+        initAudioContext();
+    }
+    
+    if (isPlaying) {
+        // Stop
+        if (gainNode) gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        musicFloatBtn.classList.remove('playing');
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+    } else {
+        // Play
+        const track = generatedTracks[currentTrackIndex];
+        playAmbientTone(track.freq, track.duration);
+        musicFloatBtn.classList.add('playing');
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        
+        // Simulate progress
+        startProgressSimulation(track.duration);
+    }
+    isPlaying = !isPlaying;
+}
+
+// Initialize Audio Context
+function initAudioContext() {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    gainNode = audioContext.createGain();
+    gainNode.connect(audioContext.destination);
+    gainNode.gain.value = volumeSlider.value / 100;
+}
+
+// Play ambient tone
+function playAmbientTone(freq, duration) {
+    if (!audioContext) initAudioContext();
+    
+    const osc = audioContext.createOscillator();
+    const osc2 = audioContext.createOscillator();
+    const lfo = audioContext.createOscillator();
+    const lfoGain = audioContext.createGain();
+    
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    osc2.type = 'sine';
+    osc2.frequency.value = freq * 1.5;
+    
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.5;
+    lfoGain.gain.value = freq * 0.02;
+    
+    lfo.connect(lfoGain);
+    lfoGain.connect(osc.frequency);
+    
+    const mainGain = audioContext.createGain();
+    mainGain.gain.setValueAtTime(0, audioContext.currentTime);
+    mainGain.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 1);
+    mainGain.gain.linearRampToValueAtTime(0, audioContext.currentTime + duration);
+    
+    osc.connect(mainGain);
+    osc2.connect(mainGain);
+    mainGain.connect(gainNode);
+    
+    osc.start();
+    osc2.start();
+    lfo.start();
+    
+    osc.stop(audioContext.currentTime + duration);
+    osc2.stop(audioContext.currentTime + duration);
+    lfo.stop(audioContext.currentTime + duration);
+}
+
+// Progress simulation for generated tracks
+let progressInterval;
+function startProgressSimulation(duration) {
+    let current = 0;
+    clearInterval(progressInterval);
+    progressInterval = setInterval(() => {
+        if (!isPlaying) {
+            clearInterval(progressInterval);
+            return;
+        }
+        current += 0.1;
+        if (current >= duration) {
+            current = 0;
+            currentTrackIndex = (currentTrackIndex + 1) % generatedTracks.length;
+            trackName.textContent = generatedTracks[currentTrackIndex].name;
+            totalTimeEl.textContent = formatTime(generatedTracks[currentTrackIndex].duration);
+        }
+        updateProgress(current, duration);
+    }, 100);
+}
+
+// Update progress
+function updateProgress(current, total) {
+    const percent = (current / total) * 100;
+    progressFill.style.width = percent + '%';
+    progressSlider.value = percent;
+    currentTimeEl.textContent = formatTime(current);
+    const remaining = total - current;
+    remainingTimeEl.textContent = '-' + formatTime(remaining);
+}
+
+// Toggle widget
+function toggleWidget() {
+    musicWidget.classList.toggle('hidden');
+}
+
+// Close widget
+function closeWidget() {
+    musicWidget.classList.add('hidden');
+}
+
+// Previous track
+function prevTrack() {
+    if (generatedTracks.length > 0) {
+        currentTrackIndex = (currentTrackIndex - 1 + generatedTracks.length) % generatedTracks.length;
+        trackName.textContent = generatedTracks[currentTrackIndex].name;
+        if (isPlaying) playGeneratedTrack();
+    } else {
+        currentTrackIndex = (currentTrackIndex - 1 + MUSIC_FILES.length) % MUSIC_FILES.length;
+        loadTrack(currentTrackIndex);
+        if (isPlaying) audioElement.play();
+    }
+}
+
+// Next track
+function nextTrack() {
+    if (generatedTracks.length > 0) {
+        currentTrackIndex = (currentTrackIndex + 1) % generatedTracks.length;
+        trackName.textContent = generatedTracks[currentTrackIndex].name;
+        if (isPlaying) playGeneratedTrack();
+    } else {
+        currentTrackIndex = (currentTrackIndex + 1) % MUSIC_FILES.length;
+        loadTrack(currentTrackIndex);
+        if (isPlaying) audioElement.play();
+    }
+}
+
+// Volume control
+function updateVolume() {
+    const value = volumeSlider.value;
+    volumeValue.textContent = value + '%';
+    
+    if (audioElement) {
+        audioElement.volume = value / 100;
+    }
+    if (gainNode) {
+        gainNode.gain.value = value / 100;
+    }
+    
+    if (value == 0) {
+        volumeHigh.classList.add('hidden');
+        volumeLow.classList.add('hidden');
+        volumeMute.classList.remove('hidden');
+    } else {
+        volumeMute.classList.add('hidden');
+        volumeHigh.classList.remove('hidden');
+    }
+}
+
+// Toggle mute
+function toggleMute() {
+    if (volumeSlider.value > 0) {
+        previousVolume = volumeSlider.value;
+        volumeSlider.value = 0;
+    } else {
+        volumeSlider.value = previousVolume;
+    }
+    updateVolume();
+}
+
+// Event Listeners
+musicFloatBtn.addEventListener('click', toggleWidget);
+closeMusicWidget.addEventListener('click', closeWidget);
+playPauseBtn.addEventListener('click', togglePlay);
+prevBtn.addEventListener('click', prevTrack);
+nextBtn.addEventListener('click', nextTrack);
+volumeSlider.addEventListener('input', updateVolume);
+volumeBtn.addEventListener('click', toggleMute);
+
+// Progress slider
+progressSlider.addEventListener('input', (e) => {
+    const percent = e.target.value;
+    progressFill.style.width = percent + '%';
+    
+    if (generatedTracks.length > 0) {
+        const total = generatedTracks[currentTrackIndex].duration;
+        const current = (percent / 100) * total;
+        currentTimeEl.textContent = formatTime(current);
+        remainingTimeEl.textContent = '-' + formatTime(total - current);
+    } else if (audioElement) {
+        const current = (percent / 100) * audioElement.duration;
+        currentTimeEl.textContent = formatTime(current);
+        remainingTimeEl.textContent = '-' + formatTime(audioElement.duration - current);
+    }
+});
+
+// Audio time update
+if (audioElement) {
+    audioElement.addEventListener('timeupdate', () => {
+        if (!audioElement) return;
+        const percent = (audioElement.currentTime / audioElement.duration) * 100;
+        progressFill.style.width = percent + '%';
+        progressSlider.value = percent;
+        currentTimeEl.textContent = formatTime(audioElement.currentTime);
+        remainingTimeEl.textContent = '-' + formatTime(audioElement.duration - audioElement.currentTime);
+    });
+    
+    audioElement.addEventListener('ended', nextTrack);
+}
+
+// Click outside to close
+document.addEventListener('click', (e) => {
+    if (!musicWidget.contains(e.target) && !musicFloatBtn.contains(e.target) && !musicWidget.classList.contains('hidden')) {
+        closeWidget();
+    }
+});
+
+// Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeWidget();
+});
