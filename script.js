@@ -621,6 +621,8 @@ function initLoadingScreen() {
         loadingScreen.style.opacity = '0';
         setTimeout(() => {
             loadingScreen.style.display = 'none';
+            const musicFloatBtn = document.getElementById('musicFloatBtn');
+            if (musicFloatBtn) musicFloatBtn.style.display = 'flex';
         }, 500);
     }, duration);
 }
