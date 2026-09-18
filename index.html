@@ -1,16 +1,259 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- =========================
+         BASIC DOCUMENT SETTINGS
+    ========================== -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+
+    <meta name="language" content="English" />
+
+    <!-- =========================
+         PRIMARY SEO
+    ========================== -->
+
+    <title>Mohammad Kaif Raja (@mkr-infinity) | Developer</title>
+
+    <meta
+      name="description"
+      content="Mohammad Kaif Raja, also known as mkr-infinity, mkr infinity, mkrinfinity and @mkr_infinity, is a developer and technology enthusiast building open-source projects, websites and applications."
+    />
+
+    <meta name="author" content="Mohammad Kaif Raja" />
+
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <link rel="canonical" href="https://mkr-infinity.github.io/" />
+
+    <!-- =========================
+         IDENTITY / NAME ASSOCIATIONS
+    ========================== -->
+
+    <meta
+      name="subject"
+      content="Mohammad Kaif Raja - mkr-infinity"
+    />
+
+    <meta
+      name="application-name"
+      content="Mohammad Kaif Raja | mkr-infinity"
+    />
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
     <link rel="icon" type="image/png" href="./favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-BCGaVrSD.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CloL_fmx.css">
+
+    <link
+      rel="apple-touch-icon"
+      href="./favicon.png"
+    />
+
+    <!-- =========================
+         OPEN GRAPH / SOCIAL SHARING
+    ========================== -->
+
+    <meta property="og:type" content="profile" />
+
+    <meta
+      property="og:title"
+      content="Mohammad Kaif Raja (@mkr-infinity)"
+    />
+
+    <meta
+      property="og:description"
+      content="Mohammad Kaif Raja — also known as mkr-infinity, mkr infinity, mkrinfinity and @mkr_infinity. Developer, open-source builder and technology enthusiast."
+    />
+
+    <meta
+      property="og:url"
+      content="https://mkr-infinity.github.io/"
+    />
+
+    <meta
+      property="og:site_name"
+      content="Mohammad Kaif Raja | mkr-infinity"
+    />
+
+    <meta
+      property="og:locale"
+      content="en_US"
+    />
+
+    <meta
+      property="profile:first_name"
+      content="Mohammad"
+    />
+
+    <meta
+      property="profile:last_name"
+      content="Kaif Raja"
+    />
+
+    <meta
+      property="profile:username"
+      content="mkr-infinity"
+    />
+
+    <!-- =========================
+         TWITTER / X
+    ========================== -->
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content="Mohammad Kaif Raja (@mkr-infinity)"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Mohammad Kaif Raja — developer, open-source builder and technology enthusiast, also known as mkr-infinity."
+    />
+
+    <!-- =========================
+         PERSON STRUCTURED DATA
+         Helps search engines understand
+         the relationship between your
+         real name and online identities.
+    ========================== -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://mkr-infinity.github.io/#person",
+
+        "name": "Mohammad Kaif Raja",
+
+        "givenName": "Mohammad",
+
+        "familyName": "Kaif",
+
+        "alternateName": [
+          "mkr-infinity",
+          "mkr infinity",
+          "mkrinfinity",
+          "mkr_infinity",
+          "MKR Infinity",
+          "MKR-INFINITY",
+          "Mohammad Kaif",
+          "Kaif Raja",
+          "Kaif"
+        ],
+
+        "url": "https://mkr-infinity.github.io/",
+
+        "sameAs": [
+          "https://github.com/mkr-infinity",
+          "https://www.linkedin.com/in/mkr-infinity",
+          "https://www.instagram.com/mkr_infinity",
+          "https://t.me/mkr_infinity"
+        ],
+
+        "jobTitle": "Developer",
+
+        "description": "Mohammad Kaif Raja, also known as mkr-infinity, is a developer and technology enthusiast who builds open-source projects, websites and applications."
+      }
+    </script>
+
+    <!-- =========================
+         WEBSITE STRUCTURED DATA
+    ========================== -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://mkr-infinity.github.io/#website",
+        "url": "https://mkr-infinity.github.io/",
+        "name": "Mohammad Kaif Raja | mkr-infinity",
+        "description": "Official website and portfolio of Mohammad Kaif Raja, also known as mkr-infinity.",
+        "publisher": {
+          "@id": "https://mkr-infinity.github.io/#person"
+        },
+        "inLanguage": "en"
+      }
+    </script>
+
+    <!-- =========================
+         BREADCRUMB STRUCTURED DATA
+    ========================== -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Mohammad Kaif Raja",
+            "item": "https://mkr-infinity.github.io/"
+          }
+        ]
+      }
+    </script>
+
+    <!-- =========================
+         PERFORMANCE / GOOGLE FONTS
+    ========================== -->
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =========================
+         VITE / REACT ASSETS
+         KEEP THESE EXACTLY AS
+         GENERATED BY YOUR BUILD
+    ========================== -->
+
+    <script
+      type="module"
+      crossorigin
+      src="./assets/index-BCGaVrSD.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="./assets/index-CloL_fmx.css"
+    />
   </head>
+
   <body>
     <div id="root"></div>
   </body>
 </html>
+```
