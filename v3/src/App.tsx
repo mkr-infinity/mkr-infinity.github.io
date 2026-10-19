@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Background3D } from './components/Background3D';
 import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
@@ -12,7 +12,32 @@ import { ContactSection } from './components/ContactSection';
 import { soundManager } from './lib/sound';
 
 export const App: React.FC = () => {
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('mkr-theme') as 'dark' | 'light' | null;
+      if (saved) return saved;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark';
+    }
+    return 'dark';
+  });
+
   const [soundEnabled, setSoundEnabled] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('mkr-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   const toggleSound = () => {
     const nextState = !soundEnabled;
@@ -28,20 +53,32 @@ export const App: React.FC = () => {
     }
   };
 
+  const isDark = theme === 'dark';
+
   return (
-    <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500/20 selection:text-cyan-200">
-      {/* 3D Background Canvas */}
-      <Background3D />
+    <div
+      className={`relative min-h-screen transition-colors duration-300 ${
+        isDark ? 'bg-[#09090b] text-stone-100' : 'bg-[#fafaf9] text-stone-900'
+      } selection:bg-amber-500/25 selection:text-amber-900 dark:selection:text-amber-200`}
+    >
+      {/* 3D Background Canvas (No Blue - Gold, Emerald, Ruby Particles) */}
+      <Background3D theme={theme} />
 
       {/* Interactive Custom Mouse Cursor */}
-      <CustomCursor />
+      <CustomCursor theme={theme} />
 
-      {/* Grid Pattern Texture Overlay */}
-      <div className="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none z-[1]" />
+      {/* Subtle Architectural Grid Pattern Overlay */}
+      <div
+        className={`fixed inset-0 pointer-events-none z-[1] transition-opacity duration-300 ${
+          isDark ? 'bg-grid-pattern-dark opacity-50' : 'bg-grid-pattern-light opacity-60'
+        }`}
+      />
 
       {/* Main Content Layout */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar
+          theme={theme}
+          toggleTheme={toggleTheme}
           soundEnabled={soundEnabled}
           toggleSound={toggleSound}
           playSfx={playSfx}

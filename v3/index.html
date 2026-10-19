@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     
+    <!-- Inline theme script to prevent flash -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('mkr-theme');
+          var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Primary Identity -->
     <title>Mohammad Kaif Raja (@mkr-infinity) | Systems, Android & Full-Stack Developer</title>
     <meta
@@ -11,7 +28,7 @@
       content="Portfolio of Mohammad Kaif Raja (mkr-infinity) — Independent Developer, Linux & Android Power User, Open-Source Builder with 6+ years experience building MKR Music, Tailor Master, Revision Master, and developer guides."
     />
     <meta name="author" content="Mohammad Kaif Raja" />
-    <meta name="theme-color" content="#030712" />
+    <meta name="theme-color" content="#09090b" />
 
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="profile" />
@@ -53,7 +70,7 @@
       }
     </script>
   </head>
-  <body class="bg-[#030712] text-slate-100 font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-200 overflow-x-hidden">
+  <body class="bg-[#09090b] text-stone-100 font-sans antialiased overflow-x-hidden transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

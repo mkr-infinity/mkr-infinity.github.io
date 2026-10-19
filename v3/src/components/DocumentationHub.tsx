@@ -18,8 +18,8 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
       description: 'A high-performance technical reference for ADB & Fastboot commands, partition structures, and fastbootd flashing, tailored for developers and ROM maintainers.',
       link: 'https://mkr-infinity.github.io/android-command-cheatsheet/',
       repo: 'https://github.com/mkr-infinity/android-command-cheatsheet',
-      icon: <Terminal className="text-cyan-400" size={20} />,
-      accent: 'border-cyan-500/20 hover:border-cyan-500/40',
+      icon: <Terminal className="text-emerald-600 dark:text-emerald-400" size={20} />,
+      accent: 'border-emerald-500/30 hover:border-emerald-500/50',
       badge: 'Interactive Web Reference',
     },
     {
@@ -29,8 +29,8 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
       description: 'Step-by-step guide explaining OEM unlocking workflows, device driver setup, fastboot commands, and manufacturer precautions for Android devices.',
       link: 'https://mkr-infinity.github.io/Guide-to-unlock-Bootloader',
       repo: 'https://github.com/mkr-infinity/Guide-to-unlock-Bootloader',
-      icon: <Cpu className="text-purple-400" size={20} />,
-      accent: 'border-purple-500/20 hover:border-purple-500/40',
+      icon: <Cpu className="text-purple-600 dark:text-purple-400" size={20} />,
+      accent: 'border-purple-500/30 hover:border-purple-500/50',
       badge: 'Technical Guide',
     },
     {
@@ -40,8 +40,8 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
       description: 'Detailed instructions on Project Treble, DSU Sideloader, dynamic partition management, and deploying clean Generic System Images (AOSP) to compatible devices.',
       link: 'https://mkr-infinity.github.io/Guide-for-flashing-GSI-to-any-device',
       repo: 'https://github.com/mkr-infinity/Guide-for-flashing-GSI-to-any-device',
-      icon: <Smartphone className="text-emerald-400" size={20} />,
-      accent: 'border-emerald-500/20 hover:border-emerald-500/40',
+      icon: <Smartphone className="text-amber-600 dark:text-amber-400" size={20} />,
+      accent: 'border-amber-500/30 hover:border-amber-500/50',
       badge: 'Technical Guide',
     },
     {
@@ -50,8 +50,8 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
       category: 'System Reference & Scripts',
       description: 'Documented walkthrough explaining KMS organization simulation, PowerShell activation scripts, and public server keys for educational study.',
       repo: 'https://github.com/mkr-infinity/Windows-Activation-free',
-      icon: <Key className="text-amber-400" size={20} />,
-      accent: 'border-amber-500/20 hover:border-amber-500/40',
+      icon: <Key className="text-rose-600 dark:text-rose-400" size={20} />,
+      accent: 'border-rose-500/30 hover:border-rose-500/50',
       badge: 'Script Repository',
     },
   ];
@@ -62,44 +62,44 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-mono mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono mb-3">
             <BookOpen size={14} />
             <span>05. README & TECHNICAL DOCUMENTATION COLLECTION</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-display mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-stone-900 dark:text-white tracking-tight font-display mb-4">
             Problem-Solving Tooling & Developer Guides
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-stone-600 dark:text-stone-400 text-base sm:text-lg">
             A coherent suite of developer-first resources, from an interactive client-side README generator
             to widely consulted Android flashing, ADB, and system manuals.
           </p>
         </div>
 
         {/* Featured Documentation Product: ReadmeHub */}
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-teal-500/30 hover:border-teal-400/50 transition-all mb-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-amber-500/30 hover:border-amber-500/50 transition-all mb-12 relative overflow-hidden shadow-sm">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8 space-y-4">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 rounded-md bg-teal-500/15 border border-teal-500/30 text-teal-300 text-xs font-mono font-semibold">
+                <span className="px-3 py-1 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs font-mono font-semibold">
                   Featured Tooling Product
                 </span>
-                <span className="px-2.5 py-0.5 rounded-md bg-white/5 text-slate-300 text-xs font-mono">
+                <span className="px-2.5 py-0.5 rounded-md bg-stone-100 dark:bg-white/5 border border-stone-200 dark:border-white/10 text-stone-700 dark:text-stone-300 text-xs font-mono">
                   React + TypeScript + Vite + Tailwind CSS
                 </span>
-                <span className="px-2.5 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 text-xs font-mono">
+                <span className="px-2.5 py-0.5 rounded-md bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs font-mono">
                   100% Client-Side
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-4xl font-extrabold text-white">
+              <h3 className="text-2xl sm:text-4xl font-extrabold text-stone-900 dark:text-white">
                 ReadmeHub — Client-Side Markdown Architect
               </h3>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                The README generator developers actually want to use. Delivers <strong>15 structurally distinct themes</strong> (Terminal, Cyberpunk, Minimalist, Brutalist, and more), live side-by-side editing, project & profile README modes, and zero telemetry with 100% browser-local persistence.
+              <p className="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+                The README generator developers actually want to use. Delivers <strong>15 structurally distinct themes</strong> (Terminal, Minimalist, Brutalist, and more), live side-by-side editing, project & profile README modes, and zero telemetry with 100% browser-local persistence.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -109,7 +109,7 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
                   rel="noopener noreferrer"
                   onClick={() => playSfx('click')}
                   onMouseEnter={() => playSfx('hover')}
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all hover:scale-105"
+                  className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-[0_4px_16px_rgba(245,158,11,0.25)] transition-all hover:scale-105"
                 >
                   <ExternalLink size={15} />
                   <span>Launch ReadmeHub Live</span>
@@ -121,7 +121,7 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
                   rel="noopener noreferrer"
                   onClick={() => playSfx('click')}
                   onMouseEnter={() => playSfx('hover')}
-                  className="p-2.5 rounded-xl bg-slate-900 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition-colors"
+                  className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-white/10 text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white transition-colors"
                   title="ReadmeHub Repository"
                   aria-label="ReadmeHub GitHub Repository"
                 >
@@ -131,19 +131,19 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
             </div>
 
             <div className="lg:col-span-4">
-              <div className="p-5 rounded-2xl bg-slate-900/90 border border-white/10 space-y-3 font-mono text-xs">
-                <div className="flex justify-between items-center text-teal-400 border-b border-white/5 pb-2">
+              <div className="p-5 rounded-2xl bg-stone-100 dark:bg-stone-900/90 border border-stone-200 dark:border-white/10 space-y-3 font-mono text-xs">
+                <div className="flex justify-between items-center text-amber-600 dark:text-amber-400 border-b border-stone-200 dark:border-white/5 pb-2">
                   <span>readmehub.config.ts</span>
-                  <span className="text-[10px] text-slate-500">v1.0.0</span>
+                  <span className="text-[10px] text-stone-400 dark:text-stone-500">v1.0.0</span>
                 </div>
-                <div className="text-slate-300 space-y-1">
-                  <p><span className="text-purple-400">const</span> themes = <span className="text-amber-400">15</span>;</p>
-                  <p><span className="text-purple-400">const</span> privacy = <span className="text-cyan-400">'Local-Only'</span>;</p>
-                  <p><span className="text-purple-400">const</span> telemetry = <span className="text-rose-400">false</span>;</p>
-                  <p><span className="text-purple-400">const</span> livePreview = <span className="text-emerald-400">true</span>;</p>
+                <div className="text-stone-700 dark:text-stone-300 space-y-1">
+                  <p><span className="text-purple-600 dark:text-purple-400">const</span> themes = <span className="text-amber-600 dark:text-amber-400">15</span>;</p>
+                  <p><span className="text-purple-600 dark:text-purple-400">const</span> privacy = <span className="text-emerald-600 dark:text-emerald-400">'Local-Only'</span>;</p>
+                  <p><span className="text-purple-600 dark:text-purple-400">const</span> telemetry = <span className="text-rose-600 dark:text-rose-400">false</span>;</p>
+                  <p><span className="text-purple-600 dark:text-purple-400">const</span> livePreview = <span className="text-amber-600 dark:text-amber-400">true</span>;</p>
                 </div>
-                <div className="pt-2 border-t border-white/5 text-[11px] text-slate-400">
-                  Zero sign-ups required. Drafts saved directly to your browser localStorage.
+                <div className="pt-2 border-t border-stone-200 dark:border-white/5 text-[11px] text-stone-500 dark:text-stone-400">
+                  Zero sign-ups required. Drafts saved directly to browser localStorage.
                 </div>
               </div>
             </div>
@@ -156,34 +156,34 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
           {guides.map((guide) => (
             <div
               key={guide.id}
-              className={`glass-panel p-6 rounded-3xl border ${guide.accent} transition-all flex flex-col justify-between space-y-5`}
+              className={`glass-panel p-6 rounded-3xl border ${guide.accent} transition-all flex flex-col justify-between space-y-5 shadow-sm`}
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="p-2 rounded-xl bg-slate-900 border border-white/5">
+                    <div className="p-2 rounded-xl bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-white/5">
                       {guide.icon}
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono text-slate-400 block uppercase tracking-wider">
+                      <span className="text-[10px] font-mono text-stone-500 dark:text-stone-400 block uppercase tracking-wider">
                         {guide.category}
                       </span>
-                      <h4 className="text-lg font-bold text-white tracking-tight">
+                      <h4 className="text-lg font-bold text-stone-900 dark:text-white tracking-tight">
                         {guide.title}
                       </h4>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-100 dark:bg-white/5 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-white/5">
                     {guide.badge}
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
                   {guide.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-white/5 flex items-center justify-between">
+              <div className="pt-3 border-t border-stone-200 dark:border-white/5 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {guide.link && (
                     <a
@@ -192,7 +192,7 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
                       rel="noopener noreferrer"
                       onClick={() => playSfx('click')}
                       onMouseEnter={() => playSfx('hover')}
-                      className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-medium flex items-center gap-1.5 transition-colors"
+                      className="px-3.5 py-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 dark:bg-white/10 dark:hover:bg-white/20 text-stone-900 dark:text-white text-xs font-medium flex items-center gap-1.5 transition-colors"
                     >
                       <span>Open Guide</span>
                       <ArrowUpRight size={14} />
@@ -205,7 +205,7 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
                     rel="noopener noreferrer"
                     onClick={() => playSfx('click')}
                     onMouseEnter={() => playSfx('hover')}
-                    className="p-1.5 rounded-lg bg-slate-900 border border-white/10 hover:border-white/20 text-slate-300 hover:text-white transition-colors"
+                    className="p-1.5 rounded-lg bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-white/10 text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white transition-colors"
                     title={`View ${guide.title} on GitHub`}
                     aria-label={`View ${guide.title} on GitHub`}
                   >
@@ -213,7 +213,7 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
                   </a>
                 </div>
 
-                <span className="text-[11px] font-mono text-slate-500">
+                <span className="text-[11px] font-mono text-stone-400 dark:text-stone-500">
                   Verified Resource
                 </span>
               </div>
@@ -222,10 +222,10 @@ export const DocumentationHub: React.FC<DocumentationHubProps> = ({ playSfx }) =
         </div>
 
         {/* Responsible Documentation Notice */}
-        <div className="p-4 rounded-2xl bg-slate-900/60 border border-white/5 text-xs text-slate-400 max-w-3xl mx-auto flex items-start gap-2.5">
-          <ShieldAlert size={18} className="text-amber-400 shrink-0 mt-0.5" />
+        <div className="p-4 rounded-2xl bg-stone-100 dark:bg-stone-900/60 border border-stone-200 dark:border-white/5 text-xs text-stone-600 dark:text-stone-400 max-w-3xl mx-auto flex items-start gap-2.5">
+          <ShieldAlert size={18} className="text-amber-500 shrink-0 mt-0.5" />
           <p className="leading-relaxed">
-            <strong className="text-white">Responsible Technical Documentation:</strong> Guides describing system modification, bootloader unlocking, and activation are written strictly for educational, technical study, and device recovery purposes. No warranty or safety guarantees are implied for unsupported hardware.
+            <strong className="text-stone-900 dark:text-white">Responsible Technical Documentation:</strong> Guides describing system modification, bootloader unlocking, and activation are written strictly for educational, technical study, and device recovery purposes. No warranty or safety guarantees are implied for unsupported hardware.
           </p>
         </div>
 

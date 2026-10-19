@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-export const CustomCursor: React.FC = () => {
+interface CustomCursorProps {
+  theme: 'dark' | 'light';
+}
+
+export const CustomCursor: React.FC<CustomCursorProps> = ({ theme }) => {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [trailingPos, setTrailingPos] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
@@ -9,7 +13,6 @@ export const CustomCursor: React.FC = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // Detect touch / coarse pointer
     if (window.matchMedia('(pointer: coarse)').matches) {
       setIsTouchDevice(true);
       return;
@@ -25,7 +28,6 @@ export const CustomCursor: React.FC = () => {
       setPosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
 
-      // Check if hovering over clickable or interactive element
       const target = e.target as HTMLElement | null;
       if (target) {
         const isClickable = !!(
@@ -46,7 +48,6 @@ export const CustomCursor: React.FC = () => {
     const onMouseLeave = () => setIsVisible(false);
     const onMouseEnter = () => setIsVisible(true);
 
-    // Smooth trailing physics
     let currentTrailX = -100;
     let currentTrailY = -100;
 
@@ -77,6 +78,8 @@ export const CustomCursor: React.FC = () => {
 
   if (isTouchDevice || !isVisible) return null;
 
+  const isDark = theme === 'dark';
+
   return (
     <>
       {/* Precision Lead Dot */}
@@ -90,9 +93,13 @@ export const CustomCursor: React.FC = () => {
       >
         <div
           className={`w-2.5 h-2.5 rounded-full transition-colors duration-200 ${
-            isHovered
-              ? 'bg-cyan-300 shadow-[0_0_12px_#00f2fe]'
-              : 'bg-cyan-400 shadow-[0_0_8px_#00f2fe]'
+            isDark
+              ? isHovered
+                ? 'bg-amber-300 shadow-[0_0_12px_#fbbf24]'
+                : 'bg-amber-400 shadow-[0_0_8px_#f59e0b]'
+              : isHovered
+              ? 'bg-amber-600 shadow-[0_0_10px_#d97706]'
+              : 'bg-stone-900 shadow-[0_0_6px_rgba(0,0,0,0.4)]'
           }`}
         />
       </div>
@@ -102,16 +109,24 @@ export const CustomCursor: React.FC = () => {
         className="fixed top-0 left-0 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 rounded-full transition-[width,height,border-color,background-color] duration-300 ease-out"
         style={{
           transform: `translate3d(${trailingPos.x}px, ${trailingPos.y}px, 0)`,
-          width: isHovered ? '56px' : isClicking ? '26px' : '36px',
-          height: isHovered ? '56px' : isClicking ? '26px' : '36px',
-          marginLeft: isHovered ? '-28px' : isClicking ? '-13px' : '-18px',
-          marginTop: isHovered ? '-28px' : isClicking ? '-13px' : '-18px',
-          border: isHovered
-            ? '1.5px solid rgba(0, 242, 254, 0.8)'
-            : '1px solid rgba(139, 92, 246, 0.45)',
-          backgroundColor: isHovered
-            ? 'rgba(0, 242, 254, 0.12)'
-            : 'rgba(139, 92, 246, 0.03)',
+          width: isHovered ? '54px' : isClicking ? '26px' : '34px',
+          height: isHovered ? '54px' : isClicking ? '26px' : '34px',
+          marginLeft: isHovered ? '-27px' : isClicking ? '-13px' : '-17px',
+          marginTop: isHovered ? '-27px' : isClicking ? '-13px' : '-17px',
+          border: isDark
+            ? isHovered
+              ? '1.5px solid rgba(245, 158, 11, 0.85)'
+              : '1px solid rgba(245, 158, 11, 0.35)'
+            : isHovered
+            ? '1.5px solid rgba(217, 119, 6, 0.9)'
+            : '1px solid rgba(41, 37, 36, 0.35)',
+          backgroundColor: isDark
+            ? isHovered
+              ? 'rgba(245, 158, 11, 0.12)'
+              : 'rgba(245, 158, 11, 0.02)'
+            : isHovered
+            ? 'rgba(217, 119, 6, 0.12)'
+            : 'rgba(41, 37, 36, 0.03)',
           backdropFilter: isHovered ? 'blur(2px)' : 'none',
         }}
       />
