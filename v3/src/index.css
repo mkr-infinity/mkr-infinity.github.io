@@ -13,6 +13,12 @@
     color: #f3f4f6;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+
+  /* Accessibility focus ring */
+  *:focus-visible {
+    outline: 2px solid #00f2fe;
+    outline-offset: 3px;
+  }
 }
 
 /* Custom Scrollbar */
@@ -85,4 +91,18 @@
 
 .font-display {
   font-family: 'Space Grotesk', sans-serif;
+}
+
+/* 4K & Television Display Scaling */
+@media (min-width: 2160px) {
+  body {
+    font-size: 1.15rem;
+  }
+}
+
+/* Smooth Touch Scrolling on iOS & Mobile */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
