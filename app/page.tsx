@@ -11,6 +11,7 @@ import Intro from '@/components/ui/Intro';
 import TopNav from '@/components/ui/TopNav';
 import Cursor from '@/components/ui/Cursor';
 import WaterFillButton from '@/components/ui/WaterFillButton';
+import MobileAdvisoryModal from '@/components/ui/MobileAdvisoryModal';
 import SmoothScroll, { setScrollLocked } from '@/components/ui/SmoothScroll';
 import { loadFrames } from '@/lib/frames';
 import { live } from '@/lib/store';
@@ -53,6 +54,7 @@ export default function Home() {
         </div>
       </main>
       <WaterFillButton />
+      <MobileAdvisoryModal />
       {!ready && <Intro onDone={done} />}
     </>
   );

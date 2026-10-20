@@ -11,6 +11,12 @@ export const CHAPTERS = [
   { id: 'contact', label: 'Finale' },
 ];
 
+export const MOBILE_CHAPTERS = [
+  { id: 'about', label: 'Origin' },
+  { id: 'projects', label: 'Missions' },
+  { id: 'contact', label: 'Finale' },
+];
+
 export default function TopNav({ show }: { show: boolean }) {
   const [active, setActive] = useState(0);
   const [istTime, setIstTime] = useState('');
@@ -157,7 +163,7 @@ export default function TopNav({ show }: { show: boolean }) {
           </motion.nav>
         </div>
 
-        {/* Top Right Corner: Capsule Connect Button with Max 3px Border Fire strictly on borders */}
+        {/* Top Right Corner: Capsule Connect Button (Hidden on Mobile) */}
         <button
           className="nav-connect-capsule border-flame-connect"
           onClick={() => scrollToId('contact')}
@@ -183,6 +189,52 @@ export default function TopNav({ show }: { show: boolean }) {
           </span>
         </button>
       </div>
+
+      {/* Mobile-Exclusive 3-Button Navigation Menu (Origin · Missions · Finale) */}
+      <motion.nav
+        className="mobile-dock-nav"
+        role="navigation"
+        aria-label="Mobile Navigation"
+        initial={false}
+        animate={{
+          y: navButtonsVisible ? 0 : 85,
+          opacity: navButtonsVisible ? 1 : 0,
+        }}
+        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="mobile-dock-inner">
+          {MOBILE_CHAPTERS.map((c) => {
+            const isCurActive =
+              c.id === 'about'
+                ? active === 1
+                : c.id === 'projects'
+                ? active === 2
+                : active === 3;
+            return (
+              <button
+                key={c.id}
+                type="button"
+                className={`mobile-dock-btn ${isCurActive ? 'is-active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToId(c.id);
+                }}
+                title={`Navigate to ${c.label}`}
+              >
+                <span className="mobile-dock-btn-label">{c.label}</span>
+                {isCurActive && (
+                  <motion.span
+                    layoutId="mobileDockActivePill"
+                    className="mobile-dock-active-glow"
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </motion.nav>
     </motion.header>
   );
 }

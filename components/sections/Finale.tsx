@@ -152,7 +152,6 @@ export default function Finale() {
               <b>{v}</b>
             </div>
           ))}
-          <div className="roll-end">TO BE CONTINUED…</div>
         </div>
       </div>
 
