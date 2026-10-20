@@ -91,7 +91,7 @@ export default function CharacterStage() {
       const now = performance.now();
       const dt = Math.min(0.04, (now - last) / 1000);
       last = now;
-      const mobile = vw < 820;
+      const mobile = vw <= 1024;
 
       live.hero = progressOf('billboard', 'pin');
       live.flight = progressOf('billboard', 'between', 'about');
