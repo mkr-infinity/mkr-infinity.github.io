@@ -7,7 +7,8 @@
 - **Role**: Self-Taught System Builder, Systems Engineer & Open-Source Creator
 - **Foundation**: 100% Self-Taught Since 2016 (No formal college degree; learned via real-world experimentation, system deconstruction, reverse engineering, and rebuilding better versions)
 - **Location**: India (IST, UTC+5:30)
-- **Primary Website**: https://mkr-infinity.github.io/
+- **Primary Website**: https://iamkaif.me/
+- **Alternate Domain**: https://mkr-infinity.github.io/
 - **Source Code**: https://github.com/mkr-infinity
 - **Direct Telegram**: https://t.me/mkr_infinity
 - **Instagram**: https://instagram.com/mkr_infinity
@@ -34,4 +35,4 @@
 - GitHub Workspace: https://github.com/mkr-infinity
 - Telegram Direct: https://t.me/mkr_infinity
 - Instagram Log: https://instagram.com/mkr_infinity
-- Canonical Portfolio: https://mkr-infinity.github.io/
+- Canonical Portfolio: https://iamkaif.me/
