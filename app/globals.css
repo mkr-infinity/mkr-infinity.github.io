@@ -3815,112 +3815,69 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   transition: all 0.25s var(--ease);
 }
 
-/* Top Left MKR Brand Capsule: 3px Real Orange Burning Flame */
+/* Top Left MKR Brand Capsule: Flame strictly on borders (0px glow, crisp 1.5px molten border) */
 .nav-identity-capsule.orange-flame-brand {
   position: relative;
   overflow: visible;
   background: rgba(18, 12, 10, 0.94);
-  border: 1.5px solid rgba(255, 120, 20, 0.85);
-  border-top-color: #ffb733;
-  box-shadow: 0 -2px 8px rgba(255, 100, 0, 0.6),
-              0 6px 20px rgba(0, 0, 0, 0.85),
-              inset 0 1px 4px rgba(255, 200, 60, 0.5),
-              inset 0 0 10px rgba(255, 120, 0, 0.2);
+  border: 1.5px solid rgba(255, 120, 20, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 
 .brand-orange-flame-aura {
   position: absolute;
-  top: -4px;
-  bottom: -2.5px;
-  left: -3px;
-  right: -3px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ff4500 0%, #ff7a00 25%, #ffa500 50%, #ffdd33 75%, #ff5500 100%);
+  inset: -1.5px;
+  border-radius: 9999px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #ff3b00 0%, #ff7a00 25%, #ffb733 50%, #ff5500 75%, #ff3b00 100%);
   background-size: 250% 250%;
-  animation: orangeFlameBorderBurn 2.4s ease infinite;
-  filter: blur(2.5px);
-  opacity: 0.88;
+  animation: orangeFlameBorderBurn 2.8s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
   pointer-events: none;
-  box-shadow: 0 -3px 8px rgba(255, 100, 0, 0.8),
-              0 -1.5px 4px rgba(255, 200, 40, 0.9),
-              0 0 12px rgba(255, 120, 0, 0.7);
-  transition: opacity 0.3s, filter 0.3s, box-shadow 0.3s;
+  filter: none;
+  box-shadow: none;
+  opacity: 1;
+  z-index: 2;
 }
 
 .brand-orange-flame-aura::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  bottom: -1.5px;
-  left: -1.5px;
-  right: -1.5px;
-  border-radius: 999px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 240, 150, 0.9) 0%, rgba(255, 120, 0, 0.7) 45%, transparent 75%);
-  animation: orangeCoreTurbulence 1.5s ease-in-out infinite alternate;
-  pointer-events: none;
+  display: none;
 }
 
-/* Licking Orange Flame Tongues 3px High */
+/* Flame tongues suppressed so fire is strictly confined to borders */
 .brand-orange-flame-tongues {
-  position: absolute;
-  top: -5px;
-  left: 8px;
-  right: 8px;
-  height: 10px;
-  pointer-events: none;
-  z-index: 1;
-  background: radial-gradient(ellipse 20% 70% at 20% 100%, rgba(255, 220, 80, 0.95) 0%, rgba(255, 100, 0, 0.75) 50%, transparent 80%),
-              radial-gradient(ellipse 22% 80% at 48% 100%, rgba(255, 240, 120, 1) 0%, rgba(255, 120, 0, 0.8) 55%, transparent 85%),
-              radial-gradient(ellipse 20% 75% at 76% 100%, rgba(255, 210, 60, 0.9) 0%, rgba(255, 90, 0, 0.75) 50%, transparent 80%),
-              radial-gradient(ellipse 18% 65% at 92% 100%, rgba(255, 180, 40, 0.85) 0%, rgba(255, 70, 0, 0.65) 50%, transparent 80%);
-  filter: blur(1.2px);
-  animation: orangeTonguesLick 1.7s ease-in-out infinite alternate;
-}
-
-@keyframes orangeTonguesLick {
-  0% { transform: translateY(0px) scaleY(1); opacity: 0.8; }
-  50% { transform: translateY(-2px) scaleY(1.25) skewX(1.5deg); opacity: 1; filter: blur(1px) drop-shadow(0 -2px 5px rgba(255, 140, 0, 0.9)); }
-  100% { transform: translateY(-3.5px) scaleY(1.35) skewX(-1.5deg); opacity: 0.85; filter: blur(1.4px) drop-shadow(0 -3px 7px rgba(255, 90, 0, 0.95)); }
+  display: none !important;
 }
 
 @keyframes orangeFlameBorderBurn {
-  0% { background-position: 0% 50%; transform: translateY(0) scale(1); }
-  50% { background-position: 100% 50%; transform: translateY(-2px) scale(1.01, 1.02); }
-  100% { background-position: 0% 50%; transform: translateY(0) scale(1); }
-}
-
-@keyframes orangeCoreTurbulence {
-  0% { opacity: 0.75; transform: scale(0.98); }
-  100% { opacity: 1; transform: scale(1.02) translateY(-1px); }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .nav-identity-capsule.orange-flame-brand:hover {
-  border-color: #ff7a00;
-  border-top-color: #ffd055;
-  box-shadow: 0 -4px 14px rgba(255, 120, 0, 0.8),
-              0 8px 28px rgba(0, 0, 0, 0.9),
-              0 0 24px rgba(255, 100, 0, 0.7);
+  border-color: rgba(255, 140, 0, 0.9);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.85);
   transform: translateY(-1px);
 }
 
 .nav-identity-capsule.orange-flame-brand:hover .brand-orange-flame-aura {
-  opacity: 1;
-  filter: blur(2.8px);
-}
-
-.nav-identity-capsule.orange-flame-brand:hover .brand-orange-flame-tongues {
-  animation-duration: 1.1s;
-  filter: blur(1px) drop-shadow(0 -4px 10px rgba(255, 150, 0, 1));
+  animation-duration: 1.5s;
+  filter: none;
+  box-shadow: none;
 }
 
 .nav-identity-capsule.orange-flame-brand .nav-avatar-shell {
   border-color: #ff7a00;
-  box-shadow: 0 0 12px rgba(255, 120, 0, 0.85);
+  box-shadow: none;
 }
 
 .nav-identity-capsule.orange-flame-brand .nav-identity-handle {
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 140, 0, 0.45);
+  text-shadow: none;
 }
 
 .nav-identity-capsule.orange-flame-brand .nav-identity-status {
@@ -4201,45 +4158,54 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   transform: translateY(0px) scale(0.98);
 }
 
-/* Top Right Connect Capsule: Max 3px Border Fire strictly on borders */
+/* Top Right Connect Capsule: Flame strictly on borders (0px glow, crisp 1.5px molten border) */
 .nav-connect-capsule.border-flame-connect {
   position: relative;
   overflow: visible;
-  border: 1.5px solid rgba(229, 9, 20, 0.85);
-  border-top-color: #ff4d58;
   background: rgba(18, 10, 14, 0.92);
-  box-shadow: 0 -1.5px 6px rgba(229, 9, 20, 0.5),
-              0 6px 20px rgba(0, 0, 0, 0.8),
-              inset 0 1px 2px rgba(255, 120, 120, 0.4);
+  border: 1.5px solid rgba(229, 9, 20, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 
 .connect-border-flame-aura {
   position: absolute;
-  top: -3px;
-  bottom: -3px;
-  left: -3px;
-  right: -3px;
+  inset: -1.5px;
   border-radius: 9999px;
+  padding: 1.5px;
   background: linear-gradient(135deg, #e50914 0%, #ff3b45 30%, #ff8030 65%, #e50914 100%);
   background-size: 250% 250%;
-  animation: connectBorderFlameLick 2.4s ease infinite;
-  filter: blur(2px);
-  opacity: 0.85;
+  animation: connectBorderFlameLick 2.8s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
   pointer-events: none;
-  box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
-  transition: opacity 0.3s, filter 0.3s;
+  filter: none;
+  box-shadow: none;
+  opacity: 1;
+  z-index: 2;
+}
+
+.nav-connect-capsule.border-flame-connect .connect-glow-ambient {
+  display: none !important;
 }
 
 @keyframes connectBorderFlameLick {
-  0% { background-position: 0% 50%; transform: scale(1); }
-  50% { background-position: 100% 50%; transform: scale(1.012) translateY(-0.6px); }
-  100% { background-position: 0% 50%; transform: scale(1); }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-connect-capsule.border-flame-connect:hover {
+  border-color: rgba(255, 60, 70, 0.95);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.85);
+  transform: translateY(-1px);
 }
 
 .nav-connect-capsule.border-flame-connect:hover .connect-border-flame-aura {
-  opacity: 1;
-  filter: blur(2.5px);
-  box-shadow: 0 0 10px rgba(229, 9, 20, 0.95), 0 -2px 8px rgba(255, 60, 40, 0.9);
+  animation-duration: 1.5s;
+  filter: none;
+  box-shadow: none;
 }
 
 @media (max-width: 860px) {

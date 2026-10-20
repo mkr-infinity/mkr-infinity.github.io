@@ -83,15 +83,14 @@ export default function TopNav({ show }: { show: boolean }) {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="nav-bar-inner">
-        {/* Top Left Corner: Floating Capsule Badge with 3px Real Orange Burning Flame */}
+        {/* Top Left Corner: Floating Capsule Badge with Flame strictly on borders */}
         <button
           className="nav-identity-capsule orange-flame-brand"
           onClick={() => scrollToId('billboard')}
           aria-label="Back to top"
         >
-          {/* Real Orange Flame 3px Rising Burning Aura & Flame Tongues */}
+          {/* Flame strictly on borders (0px glow, crisp 1.5px molten border) */}
           <span className="brand-orange-flame-aura" aria-hidden />
-          <span className="brand-orange-flame-tongues" aria-hidden />
 
           <div className="nav-avatar-shell">
             <img
