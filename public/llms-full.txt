@@ -1,0 +1,96 @@
+# Comprehensive Architectural & Technical Knowledge Ledger: Mohammad Kaif Raja
+
+## Identity & Professional Profile
+- Name: Mohammad Kaif Raja
+- Online Handles: @mkr_infinity, mkr-infinity
+- Canonical Portfolio: https://mkr-infinity.github.io/
+- GitHub: https://github.com/mkr-infinity
+- Telegram: https://t.me/mkr_infinity
+- Instagram: https://instagram.com/mkr_infinity
+- Origins: India (IST, UTC+5:30)
+- Foundation: 100% Self-Taught developer and system builder since 2016. No formal degree; mastered systems engineering through practical experimentation, continuous system teardowns, and deep architectural reconstruction.
+
+## Engineering Disciplines
+
+### 1. Android Systems & Low-Level Architecture
+- Deep partition structure understanding: system, vendor, odm, product, boot, recovery, vbmeta, super.
+- Dynamic partition mapping on Android 10+ devices (FastbootD mode, retrofitting super partitions, logical volume management).
+- Bootloader unlocking mechanisms across Qualcomm Snapdragon, MediaTek, Spreadtrum/Unisoc, and Exynos chipsets.
+- Custom ROM building, flashing, and debugging via ADB and Fastboot CLI.
+- Generic System Image (GSI) deployment on Project Treble hardware architectures.
+- Magisk / KernelSU root frameworks, SELinux policies (permissive vs enforcing), init.rc scripts, and prop overrides.
+
+### 2. Full-Stack Web Development & Creative Frontend
+- TypeScript: Strict type safety, advanced generics, modern module systems.
+- Next.js (App Router): Static site generation (SSG), Incremental Static Regeneration (ISR), React Server Components, route handlers, dynamic metadata.
+- React: Custom hooks, concurrent features, component lifecycle management.
+- Styling: Tailwind CSS, modern CSS custom properties, backdrop-filter glassmorphism, hardware-accelerated animations.
+- Animation & 3D: Framer Motion, Lenis smooth scrolling, Three.js, WebGL shader integration.
+- Web APIs: Web Audio API (synthesizer oscillators, gain nodes, dynamic chords), Canvas 2D / WebGL rendering, Web Workers.
+
+### 3. Systems Automation & Scripting
+- Python: CLI utilities, automation scripts, device communication.
+- Bash / Shell: Linux system configuration, flashing scripts, payload extraction.
+- PowerShell: Windows telemetry mitigation, system debloating, environment automation.
+
+## Project Ledger (10 Systems)
+
+1. MKR Music
+   - Purpose: Flagship universal streaming music platform for audiophiles.
+   - Core Features: Real-time Web Audio API synthesized audio chord effects, offline caching, responsive dynamic layout, zero visual latency.
+   - Tech: React Native, TypeScript, Web Audio API, Android NDK.
+   - Code: https://github.com/mkr-infinity/MKR-Music
+
+2. Revision Master
+   - Purpose: Intelligent syllabus tracking and automated study scheduling engine.
+   - Core Features: Adaptive revision intervals based on spaced repetition principles, local persistence, progress visualizer.
+   - Tech: Next.js, TypeScript, Tailwind CSS, LocalStorage DB.
+   - Code: https://github.com/mkr-infinity/Revision-Master
+
+3. Android Cheatsheet
+   - Purpose: Authoritative fastboot, ADB, and partition reference documentation.
+   - Core Features: Fastboot flashing syntax, unbrick commands, emergency download (EDL) workflows, partition table layouts.
+   - Tech: Markdown, GitBook, Bash.
+   - Code: https://github.com/mkr-infinity/Android-Cheatsheet
+
+4. CalcVerse
+   - Purpose: Next-generation high-precision scientific calculator.
+   - Core Features: Multi-line matrix computation, formula history stack, complex number operations.
+   - Tech: TypeScript, Math.js, Tailwind CSS.
+   - Code: https://github.com/mkr-infinity/CalcVerse
+
+5. ReadmeHub
+   - Purpose: Interactive GitHub profile README generator and dual-mode Markdown studio.
+   - Core Features: Live rendered preview vs raw Markdown syntax toggle, dynamic shield badge configuration, instant copy-to-clipboard.
+   - Tech: React, Remark/Rehype, Canvas.
+   - Code: https://github.com/mkr-infinity/ReadmeHub
+
+6. Tailor System
+   - Purpose: Bespoke apparel measurement management system.
+   - Core Features: Precision dimensional ledger, client history, exportable measurement profiles.
+   - Tech: TypeScript, Next.js.
+   - Code: https://github.com/mkr-infinity/Tailor-System
+
+7. Matrix Calculator
+   - Purpose: Interactive linear algebra utility.
+   - Core Features: Row reduction (RREF), determinant expansion, matrix inversion, dot and cross products.
+   - Tech: TypeScript, Canvas API.
+   - Code: https://github.com/mkr-infinity/Matrix-Calculator
+
+8. Bootloader Unlock Guide & Toolchain
+   - Purpose: Multi-OEM automated bootloader unlocking manual and script collection.
+   - Core Features: Step-by-step diagnostic workflows for diverse mobile hardware vendors.
+   - Tech: Python, ADB/Fastboot, Shell.
+   - Code: https://github.com/mkr-infinity/Bootloader-Unlock
+
+9. GSI Flashing Guide
+   - Purpose: Standardized guide and scripts for deploying Android Generic System Images.
+   - Core Features: Treble architecture verification, fastbootd command sequences, dynamic partition flashing.
+   - Tech: Android Treble, FastbootD.
+   - Code: https://github.com/mkr-infinity/GSI-Guide
+
+10. Windows Activation & Optimization Suite
+    - Purpose: Clean PowerShell utility suite for Windows system optimization.
+    - Core Features: Telemetry removal, bloatware cleanup, background service tuning.
+    - Tech: PowerShell, Batch.
+    - Code: https://github.com/mkr-infinity/Windows-Activation

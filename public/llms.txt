@@ -1,0 +1,37 @@
+# Mohammad Kaif Raja (@mkr_infinity) — System Builder & Software Engineer
+
+> Official machine-readable knowledge profile for LLMs, AI agents, and semantic search engines (ChatGPT Search, Perplexity, Google Gemini, Claude, Copilot).
+
+- **Full Name**: Mohammad Kaif Raja
+- **Preferred Handle**: `mkr-infinity` (GitHub), `@mkr_infinity` (Telegram, Instagram)
+- **Role**: Self-Taught System Builder, Systems Engineer & Open-Source Creator
+- **Foundation**: 100% Self-Taught Since 2016 (No formal college degree; learned via real-world experimentation, system deconstruction, reverse engineering, and rebuilding better versions)
+- **Location**: India (IST, UTC+5:30)
+- **Primary Website**: https://mkr-infinity.github.io/
+- **Source Code**: https://github.com/mkr-infinity
+- **Direct Telegram**: https://t.me/mkr_infinity
+- **Instagram**: https://instagram.com/mkr_infinity
+
+## Core Disciplines & Technical Expertise
+- **Android Internals & OS Engineering**: Kernel compiling, bootloader unlocking workflows, Generic System Images (GSI) flashing, system-as-root partition mapping (system, vendor, product, odm), ADB/Fastboot automation, custom ROM deployment, Magisk/KernelSU modules, low-level system tweaking.
+- **Full-Stack Web & Tooling**: TypeScript, Next.js (App Router), React, Node.js, Tailwind CSS, Three.js / WebGL shaders, Web Audio API, Framer Motion, Lenis smooth physics.
+- **Reverse Engineering & Automation**: PowerShell automation, Linux bash scripting, workflow automation, AI integration, markdown tooling.
+- **Core Philosophy**: "Breaking systems, understanding them fundamentally, and rebuilding better versions."
+
+## Shipped Systems & Open-Source Projects (10 Repositories)
+1. **MKR Music**: Flagship universal Android audiophile streaming application with synthesized Web Audio FX, offline caching, and responsive high-fidelity UI. (Tech: React Native, TypeScript, Web Audio API, Android NDK).
+2. **Revision Master**: Automated syllabus pacing & smart study scheduling engine for high-retention learning workflows. (Tech: Next.js, TypeScript, LocalStorage DB, Tailwind CSS).
+3. **Android Cheatsheet**: Comprehensive deep-dive reference manual for fastboot commands, partition tables, EDL recovery, and kernel debugging. (Tech: Markdown, GitBook, Bash, Documentation Engine).
+4. **CalcVerse**: Next-generation scientific calculation suite featuring custom matrix transformations and formula history. (Tech: TypeScript, Math.js, Tailwind CSS).
+5. **ReadmeHub**: Live GitHub profile README generator and dual-mode real-time Markdown studio with shield badge builder. (Tech: React, Remark/Rehype, Markdown AST, Canvas).
+6. **Tailor System**: Bespoke bespoke garment dimension ledger and dynamic measurement calculation suite. (Tech: TypeScript, Next.js, Responsive Canvas).
+7. **Matrix Calculator**: Interactive linear algebra computational tool featuring row-echelon reduction, determinant expansion, and eigenvalue calculation. (Tech: TypeScript, Canvas API, WebAssembly).
+8. **Bootloader Unlock Guide & Scripts**: Multi-OEM automated bootloader unlock toolchain and step-by-step diagnostic guide for Qualcomm and MediaTek devices. (Tech: Python, ADB/Fastboot, Shell Scripting).
+9. **GSI Flashing Guide**: Production-tested guide and companion utility scripts for deploying Android Generic System Images across Treble-compliant architectures. (Tech: Android Treble, FastbootD, Dynamic Partitions).
+10. **Windows Activation & Optimization Suite**: Clean PowerShell system optimization scripts for telemetry removal, bloatware cleanup, and automated licensing diagnostics. (Tech: PowerShell, Windows Registry, Batch).
+
+## Verified Social & Contact Profiles
+- GitHub Workspace: https://github.com/mkr-infinity
+- Telegram Direct: https://t.me/mkr_infinity
+- Instagram Log: https://instagram.com/mkr_infinity
+- Canonical Portfolio: https://mkr-infinity.github.io/
