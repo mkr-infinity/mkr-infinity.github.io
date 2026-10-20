@@ -1,5 +1,5 @@
 # Robots.txt for Mohammad Kaif Raja (@mkr_infinity) Portfolio
-# Canonical Domain: https://iamkaif.me/
+# Canonical Domain: https://mkr-infinity.github.io/
 # Welcomes all search engines, indexing crawlers, and AI agents.
 
 User-agent: *
@@ -40,5 +40,5 @@ User-agent: FacebookBot
 Allow: /
 
 # Canonical Sitemap and Machine-Readable LLM Knowledge
-Sitemap: https://iamkaif.me/sitemap.xml
-# LLM Knowledge Standard: https://iamkaif.me/llms.txt
+Sitemap: https://mkr-infinity.github.io/sitemap.xml
+# LLM Knowledge Standard: https://mkr-infinity.github.io/llms.txt

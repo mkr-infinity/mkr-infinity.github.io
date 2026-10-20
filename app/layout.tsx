@@ -9,14 +9,14 @@ import '@fontsource/jetbrains-mono/400.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iamkaif.me'),
+  metadataBase: new URL('https://mkr-infinity.github.io'),
   title: 'Mohammad Kaif Raja (@mkr_infinity) · Self-Taught System Builder & Software Engineer',
   description:
     'Official portfolio of Mohammad Kaif Raja (@mkr_infinity). 100% self-taught system builder since 2016 from India. Android internals, custom ROMs, high-performance web tooling, AI systems, and 10 deployed open-source systems.',
   applicationName: 'Mohammad Kaif Raja Portfolio',
   keywords: [
     'Mohammad Kaif Raja',
-    'iamkaif.me',
+    'mkr-infinity.github.io',
     'mkr-infinity',
     'mkr_infinity',
     'Mohammad Kaif Raja Portfolio',
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   publisher: 'Mohammad Kaif Raja',
   category: 'technology',
   alternates: {
-    canonical: 'https://iamkaif.me/',
+    canonical: 'https://mkr-infinity.github.io/',
     types: {
-      'text/plain': 'https://iamkaif.me/llms.txt',
+      'text/plain': 'https://mkr-infinity.github.io/llms.txt',
     },
   },
   icons: {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'profile',
     locale: 'en_US',
-    url: 'https://iamkaif.me/',
+    url: 'https://mkr-infinity.github.io/',
     title: 'Mohammad Kaif Raja (@mkr_infinity) · System Builder',
     description:
       '100% Self-Taught System Builder since 2016 from India. Breaking systems, understanding them fundamentally, and rebuilding better versions. Explore 10 shipped open-source architectures.',
@@ -108,11 +108,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://iamkaif.me/#person',
+        '@id': 'https://mkr-infinity.github.io/#person',
         name: 'Mohammad Kaif Raja',
         alternateName: ['mkr-infinity', '@mkr_infinity', 'Kaif Raja', 'MKR'],
-        url: 'https://iamkaif.me/',
-        image: 'https://iamkaif.me/og-preview.png',
+        url: 'https://mkr-infinity.github.io/',
+        image: 'https://mkr-infinity.github.io/og-preview.png',
         jobTitle: 'Self-Taught System Builder & Software Engineer',
         description:
           '100% self-taught software engineer and system builder from India since 2016. Specializes in low-level Android architecture, custom ROMs, GSI flashing, high-performance web tooling, and open-source automation workflows.',
@@ -147,32 +147,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://iamkaif.me/#website',
-        url: 'https://iamkaif.me/',
+        '@id': 'https://mkr-infinity.github.io/#website',
+        url: 'https://mkr-infinity.github.io/',
         name: 'Mohammad Kaif Raja Portfolio',
-        alternateName: 'iamkaif.me',
+        alternateName: 'mkr-infinity.github.io',
         description:
           'Official developer portfolio of Mohammad Kaif Raja, showcasing 10 open-source systems, engineering philosophy, and contact channels.',
         publisher: {
-          '@id': 'https://iamkaif.me/#person',
+          '@id': 'https://mkr-infinity.github.io/#person',
         },
         inLanguage: 'en-US',
       },
       {
         '@type': 'ProfilePage',
-        '@id': 'https://iamkaif.me/#profilepage',
-        url: 'https://iamkaif.me/',
+        '@id': 'https://mkr-infinity.github.io/#profilepage',
+        url: 'https://mkr-infinity.github.io/',
         name: 'Mohammad Kaif Raja (@mkr_infinity) — Profile & Systems',
         isPartOf: {
-          '@id': 'https://iamkaif.me/#website',
+          '@id': 'https://mkr-infinity.github.io/#website',
         },
         mainEntity: {
-          '@id': 'https://iamkaif.me/#person',
+          '@id': 'https://mkr-infinity.github.io/#person',
         },
       },
       {
         '@type': 'ItemList',
-        '@id': 'https://iamkaif.me/#projects',
+        '@id': 'https://mkr-infinity.github.io/#projects',
         name: 'Shipped Systems & Open-Source Projects by Mohammad Kaif Raja',
         description: '10 verified open-source software systems architected by Mohammad Kaif Raja.',
         numberOfItems: 10,
@@ -186,7 +186,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Flagship audiophile streaming music suite with real-time Web Audio API synthesized audio chord effects.',
               codeRepository: 'https://github.com/mkr-infinity/MKR-Music',
               programmingLanguage: ['TypeScript', 'React Native', 'Web Audio API'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -198,7 +198,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Automated syllabus pacing & smart study scheduling engine for high-retention learning workflows.',
               codeRepository: 'https://github.com/mkr-infinity/Revision-Master',
               programmingLanguage: ['TypeScript', 'Next.js', 'Tailwind CSS'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -209,7 +209,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Android Cheatsheet',
               description: 'Comprehensive deep-dive reference manual for fastboot commands, partition tables, and kernel debugging.',
               url: 'https://github.com/mkr-infinity/Android-Cheatsheet',
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -221,7 +221,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Next-generation scientific calculation suite featuring custom matrix transformations and formula history.',
               codeRepository: 'https://github.com/mkr-infinity/CalcVerse',
               programmingLanguage: ['TypeScript', 'Math.js'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -233,7 +233,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Interactive GitHub profile README generator and dual-mode Markdown studio with shield badge builder.',
               codeRepository: 'https://github.com/mkr-infinity/ReadmeHub',
               programmingLanguage: ['React', 'Remark', 'TypeScript'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -245,7 +245,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Bespoke garment dimension ledger and dynamic measurement calculation suite.',
               codeRepository: 'https://github.com/mkr-infinity/Tailor-System',
               programmingLanguage: ['TypeScript', 'Next.js'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -257,7 +257,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Interactive linear algebra computational tool featuring row-echelon reduction and determinant expansion.',
               codeRepository: 'https://github.com/mkr-infinity/Matrix-Calculator',
               programmingLanguage: ['TypeScript', 'Canvas API'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -269,7 +269,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Multi-OEM automated bootloader unlock toolchain and step-by-step diagnostic guide.',
               codeRepository: 'https://github.com/mkr-infinity/Bootloader-Unlock',
               programmingLanguage: ['Python', 'Shell', 'ADB/Fastboot'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -280,7 +280,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'GSI Flashing Guide',
               description: 'Production-tested guide and companion utility scripts for deploying Android Generic System Images across Project Treble architectures.',
               url: 'https://github.com/mkr-infinity/GSI-Guide',
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
           {
@@ -292,7 +292,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Clean PowerShell system optimization scripts for telemetry removal and bloatware cleanup.',
               codeRepository: 'https://github.com/mkr-infinity/Windows-Activation',
               programmingLanguage: ['PowerShell', 'Batch'],
-              author: { '@id': 'https://iamkaif.me/#person' },
+              author: { '@id': 'https://mkr-infinity.github.io/#person' },
             },
           },
         ],
@@ -304,7 +304,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="canonical" href="https://iamkaif.me/" />
+        <link rel="canonical" href="https://mkr-infinity.github.io/" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Profile" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Comprehensive LLM Ledger" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
