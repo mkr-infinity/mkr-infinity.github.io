@@ -7577,66 +7577,116 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
     white-space: nowrap !important;
   }
 
-  /* ===== HERO / BILLBOARD MOBILE LAYOUT ===== */
+  /* ===== HERO / BILLBOARD MOBILE & TABLET LAYOUT ===== */
   .hero-clean-container {
-    top: 76px !important;
+    position: absolute !important;
+    top: clamp(60px, 8.5vh, 76px) !important;
     bottom: auto !important;
-    left: 16px !important;
-    right: 16px !important;
-    width: calc(100% - 32px) !important;
-    max-width: 480px !important;
-    padding: 12px 0 0 0 !important;
-    gap: 12px !important;
-    background: radial-gradient(ellipse at 30% 20%, rgba(10, 6, 12, 0.75) 0%, rgba(10, 6, 12, 0.45) 50%, transparent 80%) !important;
-    border-radius: 16px !important;
+    left: 18px !important;
+    right: auto !important;
+    width: min(340px, calc(100% - 36px)) !important;
+    max-width: 360px !important;
+    padding: 0 !important;
+    gap: 6px !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     pointer-events: auto !important;
+    z-index: 10 !important;
+  }
+
+  .hero-headline-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 2px !important;
+    width: 100% !important;
   }
 
   .hero-salutation-line {
-    font-size: 14px !important;
+    font-size: 13.5px !important;
+    text-align: left !important;
+    color: #cfcfdc !important;
+    margin: 0 !important;
   }
 
   .hero-heroic-name {
-    font-size: clamp(36px, 10.5vw, 52px) !important;
-    line-height: 0.95 !important;
+    font-size: clamp(30px, 8vw, 42px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0.02em !important;
     margin: 2px 0 4px 0 !important;
+    text-align: left !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0 6px !important;
+  }
+
+  .hero-name-token {
+    display: inline-block !important;
+    margin: 0 !important;
   }
 
   .hero-role-subline {
-    font-size: clamp(15px, 4.4vw, 19px) !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    margin: 0 0 6px 0 !important;
+  }
+
+  .hero-bio-container {
+    width: 100% !important;
+    max-width: 310px !important;
   }
 
   .hero-clean-bio {
-    font-size: 13.5px !important;
-    line-height: 1.5 !important;
-    max-width: 92% !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    color: #cfcfe2 !important;
+    text-align: left !important;
+    margin: 0 0 8px 0 !important;
   }
 
   .hero-actions-dock {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
     gap: 8px !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    max-width: 280px !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
 
   .hero-capsule-btn {
-    padding: 9px 16px 9px 12px !important;
-    gap: 10px !important;
-    width: 100% !important;
-    justify-content: flex-start !important;
+    padding: 6px 14px 6px 10px !important;
+    gap: 8px !important;
+    border-radius: 9999px !important;
+    height: 35px !important;
+    width: auto !important;
+    flex: 0 1 auto !important;
   }
 
   .capsule-icon-bubble {
-    width: 28px !important;
-    height: 28px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
 
   .capsule-title {
-    font-size: 10.5px !important;
+    font-size: 9.5px !important;
+    letter-spacing: 0.08em !important;
   }
 
   .capsule-sub {
-    font-size: 9.5px !important;
+    display: none !important;
+  }
+
+  .capsule-chevron {
+    font-size: 11px !important;
   }
 
   .hi-cue {
@@ -7644,169 +7694,254 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   }
 
   .story {
-    bottom: 80px !important;
+    bottom: 74px !important;
     left: 16px !important;
     right: 16px !important;
     max-width: calc(100% - 32px) !important;
     text-align: center !important;
+    font-size: 12px !important;
   }
 
-  /* ===== ABOUT SECTION MOBILE LAYOUT ===== */
+  /* ===== 2. ABOUT SECTION: COMPACT CARD SITUATED BELOW CHARACTER ===== */
+  .about-sticky {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding: 0 16px max(74px, env(safe-area-inset-bottom)) !important;
+  }
+
   .about-panel {
-    top: 76px !important;
-    left: 16px !important;
-    right: 16px !important;
-    width: calc(100% - 32px) !important;
-    max-width: 520px !important;
-    padding: 16px !important;
-    background: rgba(14, 10, 16, 0.88) !important;
-    border-radius: 18px !important;
-    backdrop-filter: blur(16px) !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    padding: 14px 16px !important;
+    background: rgba(14, 10, 16, 0.94) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85) !important;
+  }
+
+  .ab-kicker {
+    font-size: 9px !important;
+    margin-bottom: 4px !important;
+    letter-spacing: 0.2em !important;
   }
 
   .ab-title {
-    font-size: clamp(28px, 8vw, 38px) !important;
-    line-height: 1.0 !important;
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .ab-handle-tag {
+    font-size: 9.5px !important;
+    margin-bottom: 6px !important;
   }
 
   .ab-ink {
-    font-size: 13.5px !important;
-    line-height: 1.6 !important;
-    max-height: 130px;
-    overflow-y: auto;
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+    max-height: 85px !important;
+    overflow-y: auto !important;
+    margin-bottom: 8px !important;
   }
 
   .ab-sharingan-circles {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    margin: 12px 0 !important;
+    gap: 6px !important;
+    margin: 6px 0 10px 0 !important;
   }
 
   .sharingan-pure-orb {
-    width: 58px !important;
-    height: 58px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .sharingan-svg {
-    width: 58px !important;
-    height: 58px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .sharingan-circle-item {
-    padding: 6px !important;
+    padding: 4px !important;
+  }
+
+  .tooltip-hud-pill {
+    font-size: 9.5px !important;
+    padding: 2px 6px !important;
   }
 
   .ab-links-row {
-    flex-direction: column !important;
+    display: flex !important;
+    flex-direction: row !important;
     gap: 8px !important;
   }
 
   .ab-btn {
-    width: 100% !important;
+    flex: 1 1 50% !important;
+    padding: 6px 10px !important;
+    font-size: 10px !important;
+    height: 32px !important;
     justify-content: center !important;
-    padding: 10px !important;
   }
 
-  /* ===== MISSIONS SECTION MOBILE LAYOUT ===== */
+  /* ===== 3. MISSIONS SECTION: COMPACT SMALL CARDS FOR MOBILE & TABLETS ===== */
   .ms-stack-deck {
-    padding: 0 14px 18vh !important;
+    padding: 0 16px 16vh !important;
+  }
+
+  .ms-stack-card {
+    scroll-snap-align: start !important;
+    margin-bottom: 12vh !important;
   }
 
   .ms-card-content,
   .ms-card-content.reverse {
     grid-template-columns: 1fr !important;
-    gap: 12px !important;
+    min-height: auto !important;
+    max-height: none !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85) !important;
+    gap: 0 !important;
+  }
+
+  .ms-media-col {
+    height: 135px !important;
+    min-height: 125px !important;
+    max-height: 145px !important;
+    border-radius: 13px 13px 0 0 !important;
+    overflow: hidden !important;
   }
 
   .ms-body-col {
-    padding: 16px !important;
+    padding: 12px 14px !important;
+    gap: 6px !important;
+  }
+
+  .ms-card-header {
+    margin-bottom: 2px !important;
+  }
+
+  .ms-card-num {
+    font-size: 9px !important;
+  }
+
+  .ms-card-category {
+    font-size: 8.5px !important;
   }
 
   .ms-card-title {
-    font-size: 22px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 3px !important;
   }
 
   .ms-card-desc {
-    font-size: 13px !important;
-    line-height: 1.55 !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    color: #b5b5c5 !important;
+    margin-bottom: 6px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .ms-card-tags {
+    gap: 4px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .ms-tag {
+    font-size: 8.5px !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
   }
 
   .ms-actions-bar {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
+    gap: 6px !important;
+    margin-top: 2px !important;
   }
 
   .ms-btn {
-    flex: 1 1 calc(50% - 6px) !important;
-    padding: 8px 10px !important;
-    font-size: 10px !important;
-    justify-content: center !important;
+    height: 30px !important;
+    padding: 5px 10px !important;
+    font-size: 9.5px !important;
+    border-radius: 6px !important;
   }
 
-  /* ===== FINALE SECTION MOBILE LAYOUT ===== */
+  /* ===== 4. FINALE SECTION: COMPACT SOCIAL CAPSULES & ZERO EXTRA TEXT ===== */
   .finale {
-    padding: 60px 16px 120px !important;
+    padding: 40px 16px 95px !important;
+    text-align: center !important;
   }
 
   .fin-title {
-    font-size: clamp(38px, 12vw, 56px) !important;
+    font-size: clamp(30px, 8.5vw, 42px) !important;
+    line-height: 1.0 !important;
+    margin: 4px 0 6px !important;
   }
 
   .fin-sub {
-    font-size: 13.5px !important;
-    line-height: 1.5 !important;
-    max-width: 100% !important;
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+    max-width: 310px !important;
+    margin: 0 auto 16px !important;
   }
 
   .fin-capsules-row {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 10px !important;
+    gap: 8px !important;
     width: 100% !important;
-    max-width: 360px !important;
-    margin: 0 auto 30px !important;
+    max-width: 290px !important;
+    margin: 0 auto !important;
   }
 
   .social-flame-capsule {
     width: 100% !important;
+    height: 42px !important;
+    padding: 6px 14px !important;
+    border-radius: 9999px !important;
   }
 
-  .roll {
-    padding: 0 10px !important;
+  .capsule-logo-wrap svg {
+    width: 18px !important;
+    height: 18px !important;
   }
 
-  .roll-row {
-    font-size: 12px !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 4px !important;
-    padding: 10px 0 !important;
+  .capsule-platform {
+    font-size: 11.5px !important;
   }
 
-  .roll-row span {
-    font-size: 10px !important;
-    opacity: 0.7;
+  .capsule-handle {
+    font-size: 9px !important;
   }
 
-  .roll-row b {
-    font-size: 12px !important;
-  }
-
-  /* ===== WATER FILL BUTTON REPOSITION ON MOBILE ===== */
+  /* ===== 5. WATER FILL BUTTON REPOSITION ON MOBILE ===== */
   .water-fill-btn-container {
-    bottom: 82px !important;
+    bottom: 78px !important;
     right: 14px !important;
   }
 
   .water-liquid-orb {
-    width: 48px !important;
-    height: 48px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .water-orb-svg {
-    width: 48px !important;
-    height: 48px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 }
 

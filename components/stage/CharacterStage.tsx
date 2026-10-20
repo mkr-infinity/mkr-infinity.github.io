@@ -8,13 +8,13 @@ type Place = { cx: number; cy: number; h: number; rot: number; alpha: number };
 const ASPECT = 16 / 9;
 
 function heroPlace(vw: number, vh: number, mobile: boolean): Place {
-  if (mobile) return { cx: vw * 0.75, cy: vh * 0.48, h: vh * 0.72, rot: 0, alpha: 1 };
+  if (mobile) return { cx: vw * 0.72, cy: vh * 0.58, h: vh * 0.58, rot: 0, alpha: 1 };
   const h = Math.max(vh, (vw / ASPECT) * 0.94);
   return { cx: vw * 0.70, cy: vh * 0.5, h, rot: 0, alpha: 1 };
 }
 
 function aboutPlace(vw: number, vh: number, mobile: boolean): Place {
-  if (mobile) return { cx: vw * 0.5, cy: vh * 0.38, h: vh * 0.64, rot: 0, alpha: 1 };
+  if (mobile) return { cx: vw * 0.5, cy: vh * 0.25, h: vh * 0.44, rot: 0, alpha: 1 };
   return { cx: vw * 0.28, cy: vh * 0.56, h: vh * 0.98, rot: 0, alpha: 1 };
 }
 
