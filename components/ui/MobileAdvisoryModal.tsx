@@ -16,8 +16,8 @@ export default function MobileAdvisoryModal() {
     try {
       if (typeof window === 'undefined') return;
       const seen = sessionStorage.getItem('mkr_mobile_desktop_advisory_seen');
-      const isMobileScreen = window.innerWidth <= 768;
-      if (!seen && isMobileScreen) {
+      const isMobileOrTablet = window.innerWidth <= 1024;
+      if (!seen && isMobileOrTablet) {
         // Small delay to let initial page layout settle smoothly
         const t = setTimeout(() => setIsOpen(true), 400);
         return () => clearTimeout(t);

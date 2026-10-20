@@ -4105,40 +4105,13 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Specular Shimmer Sweep on Hover */
-.nav-connect-capsule::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.25),
-    transparent
-  );
-  pointer-events: none;
-}
-
 .nav-connect-capsule:hover {
   background: rgba(255, 255, 255, 0.09);
   border-color: rgba(229, 9, 20, 0.65);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.6),
-    0 0 24px rgba(229, 9, 20, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.55);
   transform: translateY(-2px);
-}
-
-.nav-connect-capsule:hover .connect-glow-ambient {
-  opacity: 1;
-}
-
-.nav-connect-capsule:hover::after {
-  left: 120%;
-  transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-connect-capsule:hover .connect-label {
@@ -4165,6 +4138,12 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   background: rgba(18, 10, 14, 0.92);
   border: 1.5px solid rgba(229, 9, 20, 0.55);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.nav-connect-capsule.border-flame-connect::after,
+.nav-connect-capsule.border-flame-connect::before {
+  display: none !important;
+  content: none !important;
 }
 
 .connect-border-flame-aura {
@@ -7317,7 +7296,7 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   padding: 20px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .mobile-advisory-backdrop {
     display: none !important;
   }
@@ -7466,12 +7445,12 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   font-weight: 700;
 }
 
-/* ===== 2. MOBILE EXCLUSIVE 3-BUTTON DOCK (Hidden on Desktop) ===== */
+/* ===== 2. MOBILE & TABLET EXCLUSIVE 3-BUTTON DOCK (Hidden on Desktop > 1024px) ===== */
 .mobile-dock-nav {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-dock-nav {
     display: block !important;
     position: fixed;
@@ -7546,8 +7525,8 @@ html:not(.has-custom-cursor) .cursor-ambient-aura {
   }
 }
 
-/* ===== 3. MOBILE SCREEN ADAPTIVE RULES (Strictly <= 768px) ===== */
-@media (max-width: 768px) {
+/* ===== 3. MOBILE & TABLET SCREEN ADAPTIVE RULES (Strictly <= 1024px) ===== */
+@media (max-width: 1024px) {
   /* Prevent horizontal scroll jitter */
   html, body, main {
     overflow-x: hidden !important;

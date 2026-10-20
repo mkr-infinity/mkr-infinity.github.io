@@ -2,17 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { PROFILE, EPISODES } from '@/lib/data';
-
-const ROLL: [string, string][] = [
-  ['System Architect & Builder', PROFILE.realName],
-  ['Persona & Handle', PROFILE.handle],
-  ['Origins', '100% Self-Taught Since 2016 · India'],
-  ['Core Disciplines', 'System Architecture · Android Internals · Reverse Engineering · AI Systems · Automation'],
-  ['Weaponry', 'TypeScript · Next.js · Python · ADB/Fastboot · Bash · Node.js · Linux'],
-  ['Deployments & Projects', EPISODES.map((e) => e.name).join(' · ')],
-  ['Philosophy', 'Breaking systems, understanding them, and rebuilding better versions.'],
-];
+import { PROFILE } from '@/lib/data';
 
 function SocialCapsule({
   href,
@@ -142,23 +132,6 @@ export default function Finale() {
           }
         />
       </div>
-
-      {/* Credits Roll */}
-      <div className="roll" aria-label="Credits">
-        <div className="roll-inner">
-          {ROLL.map(([k, v]) => (
-            <div className="roll-row" key={k}>
-              <span>{k}</span>
-              <b>{v}</b>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Clean Footer */}
-      <footer className="fin-foot">
-        <span>Self-Taught System Builder · Since 2016 · India</span>
-      </footer>
     </section>
   );
 }
