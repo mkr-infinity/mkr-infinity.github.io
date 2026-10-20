@@ -41,8 +41,10 @@ jobs:
       - name: Build with Next.js (Static Export for GitHub Pages)
         run: GITHUB_PAGES=true pnpm run build
 
-      - name: Ensure .nojekyll Exists
-        run: touch ./out/.nojekyll
+      - name: Ensure CNAME and .nojekyll Exist in Output
+        run: |
+          touch ./out/.nojekyll
+          cp ./CNAME ./out/CNAME || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
